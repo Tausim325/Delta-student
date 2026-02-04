@@ -92,7 +92,10 @@ app.use((req, res, next) => {
 // res.locals(registerUser);
 
 // });
-
+// home route (FIX)
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 // we use only this line beside all listings route
 app.use("/listings", listingsRouter);
 // we use only this line beside all review route
