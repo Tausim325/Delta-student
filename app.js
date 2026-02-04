@@ -82,10 +82,6 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-// home route (FIX)
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
 //demo
 // app.get("/demouser", async(req,res)=>{
 // let fakeUser = new User({
