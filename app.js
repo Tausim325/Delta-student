@@ -82,10 +82,7 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-// redirect route
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
+
 
 //demo
 // app.get("/demouser", async(req,res)=>{
@@ -97,6 +94,10 @@ app.get("/", (req, res) => {
 // res.locals(registerUser);
 
 // });
+// redirect route
+app.get("/", (req, res) => {
+  return res.redirect("/listings");
+});
 
 // we use only this line beside all listings route
 app.use("/listings", listingsRouter);
@@ -126,5 +127,7 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
+
+
 
  
