@@ -82,6 +82,10 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
+// redirect route
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 //demo
 // app.get("/demouser", async(req,res)=>{
@@ -114,7 +118,13 @@ res.status(statusCode).render("error.ejs",{message});
 // res.status(statusCode).send(message);
 });  
 
-app.listen(8080, () => {
-  console.log("server is working to port 8080");
+
+// app.listen(8080, () => {
+//   console.log("server is working to port 8080");
+// });
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
 });
+
  
